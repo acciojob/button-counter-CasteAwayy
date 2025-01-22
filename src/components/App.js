@@ -1,11 +1,16 @@
 
 import React from "react";
-import './../styles/App.css';
+import { useState } from "react";
 
 const App = () => {
+  const [number, setNumber] = useState(0);
+  function handleInput() {
+    setNumber((currNumber) => currNumber + 1);
+  }
   return (
     <div>
-        {/* Do not remove the main div */}
+      <p>Button clicked {number} times</p>
+      <button onClick={handleInput}>Click me</button>
     </div>
   )
 }
